@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Ahmed",
+    "education": "MBBS, FCPS",
+    "speciality": "Cardiology",
+    "experience": "8 Years",
+    "registrationNumber": "D-1001",
+    "fee": 500,
+    "image": "https://i.ibb.co/N2q2x5S/doctor1.png"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Hasan Mahmud",
+    "education": "MBBS, MD",
+    "speciality": "Neurology",
+    "experience": "10 Years",
+    "registrationNumber": "D-1002",
+    "fee": 700,
+    "image": "https://i.ibb.co/F5nWg8R/doctor2.png"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Nusrat Jahan",
+    "education": "MBBS, FCPS",
+    "speciality": "Dermatology",
+    "experience": "6 Years",
+    "registrationNumber": "D-1003",
+    "fee": 450,
+    "image": "https://i.ibb.co/Np3V0fQ/doctor3.png"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Fahim Khan",
+    "education": "MBBS, MS",
+    "speciality": "Orthopedic",
+    "experience": "9 Years",
+    "registrationNumber": "D-1004",
+    "fee": 650,
+    "image": "https://i.ibb.co/6g9dQ1k/doctor4.png"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Tania Islam",
+    "education": "MBBS, DGO",
+    "speciality": "Gynecology",
+    "experience": "7 Years",
+    "registrationNumber": "D-1005",
+    "fee": 550,
+    "image": "https://i.ibb.co/1JrL7K9/doctor5.png"
+  },
+  {
+    "id": 6,
+    "name": "Dr. Reza Karim",
+    "education": "MBBS, MD",
+    "speciality": "Medicine",
+    "experience": "11 Years",
+    "registrationNumber": "D-1006",
+    "fee": 600,
+    "image": "https://i.ibb.co/5MZkKYZ/doctor6.png"
+  },
+  {
+    "id": 7,
+    "name": "Dr. Anika Rahman",
+    "education": "MBBS, FCPS",
+    "speciality": "Pediatrics",
+    "experience": "5 Years",
+    "registrationNumber": "D-1007",
+    "fee": 400,
+    "image": "https://i.ibb.co/3pX7zvM/doctor7.png"
+  },
+  {
+    "id": 8,
+    "name": "Dr. Shuvo Roy",
+    "education": "MBBS, MS",
+    "speciality": "ENT",
+    "experience": "8 Years",
+    "registrationNumber": "D-1008",
+    "fee": 480,
+    "image": "https://i.ibb.co/X7pKzqN/doctor8.png"
+  },
+  {
+    "id": 9,
+    "name": "Dr. Mehedi Hasan",
+    "education": "MBBS, MD",
+    "speciality": "Psychiatry",
+    "experience": "9 Years",
+    "registrationNumber": "D-1009",
+    "fee": 620,
+    "image": "https://i.ibb.co/3fKJr6w/doctor9.png"
+  },
+  {
+    "id": 10,
+    "name": "Dr. Farzana Akter",
+    "education": "MBBS, FCPS",
+    "speciality": "Ophthalmology",
+    "experience": "6 Years",
+    "registrationNumber": "D-1010",
+    "fee": 530,
+    "image": "https://i.ibb.co/Kw9P0mD/doctor10.png"
+  },
+  {
+    "id": 11,
+    "name": "Dr. Imran Chowdhury",
+    "education": "MBBS, MS",
+    "speciality": "Urology",
+    "experience": "10 Years",
+    "registrationNumber": "D-1011",
+    "fee": 720,
+    "image": "https://i.ibb.co/1f6cG6J/doctor11.png"
+  },
+  {
+    "id": 12,
+    "name": "Dr. Rima Sultana",
+    "education": "MBBS, DCH",
+    "speciality": "Child Specialist",
+    "experience": "7 Years",
+    "registrationNumber": "D-1012",
+    "fee": 470,
+    "image": "https://i.ibb.co/qB4h5Wd/doctor12.png"
+  }
+]
