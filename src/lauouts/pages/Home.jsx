@@ -3,65 +3,64 @@ import Banner from '../../components/Banner';
 import { data } from 'react-router';
 
 const Home = () => {
-  const [doctors, setDoctors] = useState([]);
-  const [showAll, setShowAll] = useState(false);
+    const [doctors, setDoctors] = useState([]);
+    const [showAll, setShowAll] = useState(false);
 
 
-  useEffect(() => {
-    fetch("/doctors.json")
-      .then((res) => res.json())
-      .then((data) => setDoctors(data));
-  }, []);
+    useEffect(() => {
+        fetch("/doctors.json")
+            .then((res) => res.json())
+            .then((data) => setDoctors(data));
+    }, []);
 
 
-  const displayedDoctors = showAll ? doctors : doctors.slice(0, 6);
+    const displayedDoctors = showAll ? doctors : doctors.slice(0, 6);
 
 
-  return (
-    <div>
-      <Banner></Banner>
+    return (
+        <div>
+            <Banner></Banner>
 
-      <div className="w-56 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
-        <div className="rounded-xl bg-[#EAF7F7] p-2">
-          <img
-            src={image}
-            alt={name}
-            className="h-32 w-full rounded-lg object-cover"
-          />
+<div className="px-6 py-12">
+        <h2 className="text-3xl font-bold text-center mb-10">Our Doctors</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedDoctors.map((doctor) => (
+            <div 
+              key={doctor.id} 
+              className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition"
+            >
+              <img 
+                src={doctor.image} 
+                alt={doctor.name}
+                className="w-full h-52 object-cover rounded-xl mb-4"
+              />
+              <h3 className="text-xl font-semibold">{doctor.name}</h3>
+              <p className="text-blue-600 font-medium">{doctor.specialty}</p>
+              <p className="text-gray-600 text-sm mt-1">{doctor.education}</p>
+              <p className="text-gray-500 text-sm mt-3 line-clamp-2">
+                {doctor.experience}
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-3 flex gap-2 text-[10px]">
-          <span className="rounded-full bg-green-50 px-2 py-1 text-green-600">
-            Available
-          </span>
-          <span className="rounded-full bg-blue-50 px-2 py-1 text-blue-600">
-            {experience}
-          </span>
-        </div>
-
-        <h2 className="mt-2 text-sm font-bold text-gray-800">
-          {name}
-        </h2>
-
-        <p className="text-xs text-gray-500">
-          {education}
-        </p>
-
-        <p className="mt-2 border-t border-dashed pt-2 text-[11px] text-gray-500">
-          Reg No: {registrationNumber}
-        </p>
-
-        <Link to={`/doctors/${id}`}>
-          <button className="mt-3 w-full rounded-full border border-blue-400 py-2 text-xs font-medium text-blue-500 transition hover:bg-blue-500 hover:text-white">
-            View Details
-          </button>
-        </Link>
+        {!showAll && doctors.length > 6 && (
+          <div className="text-center mt-10">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium"
+            >
+              See All Doctors
+            </button>
+          </div>
+        )}
       </div>
     </div>
 
 
-
-  );
+        
+    );
 };
 
 export default Home;
