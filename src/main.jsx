@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router/dom";
 import Root from './lauouts/Root.jsx';
 import ErrorPage from './lauouts/pages/ErrorPage.jsx';
 import Home from './lauouts/pages/Home.jsx';
+import DoctorDetails from './lauouts/pages/DoctorDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         Component: Home,
+      },
+
+      {
+        path: "/doctors/:id",
+        Component: DoctorDetails,
       }
     ]
   },
