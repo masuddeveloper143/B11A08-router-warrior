@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { saveAppointment } from "../../utilities/localStorage";
 
+import { toast } from "react-toastify";
+
 const DoctorDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -12,10 +14,10 @@ const DoctorDetails = () => {
         const success = saveAppointment(doctor.id);
 
         if (success) {
-            alert(`${doctor.name} booked successfully`);
+            toast.success(`${doctor.name} booked successfully`);
             navigate("/bookings");
         } else {
-            alert("You already booked this doctor");
+            toast.error("You already booked this doctor");
         }
     };
 
@@ -35,24 +37,73 @@ const DoctorDetails = () => {
     }
 
     return (
-        <div>
-            <img
-                src={doctor.image}
-                alt={doctor.name}
-                style={{ width: "250px" }}
-            />
+        <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="bg-gray-100 rounded-2xl p-8 text-center">
+                <h1 className="text-3xl font-bold text-gray-800">
+                    Doctor’s Profile Details
+                </h1>
+                <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+                    Get expert consultation and dependable healthcare from trusted
+                    professionals dedicated to your well-being.
+                </p>
+            </div>
 
-            <h1>{doctor.name}</h1>
-            <p>{doctor.education}</p>
-            <p>{doctor.speciality}</p>
-            <p>{doctor.experience}</p>
-            <p>{doctor.registrationNumber}</p>
-            <p>Fee: {doctor.fee} Taka</p>
+            <div className="mt-8 bg-white border border-gray-200 rounded-2xl p-6 md:flex gap-6">
+                <img
+                    src={doctor.image}
+                    alt={doctor.name}
+                    className="w-full md:w-64 h-64 object-cover rounded-2xl"
+                />
 
-            <button className="btn bg-green-500 " onClick={handleBookNow}>
-                Book Now
-            </button>
+                <div className="mt-5 md:mt-0 flex-1">
+                    <h2 className="text-2xl font-bold text-gray-800">
+                        {doctor.name}
+                    </h2>
+
+                    <p className="text-gray-500 mt-1">{doctor.education}</p>
+
+                    <p className="text-gray-500 mt-2">
+                        Speciality: {doctor.speciality}
+                    </p>
+
+                    <p className="text-gray-500 mt-2">
+                        Experience: {doctor.experience}
+                    </p>
+
+                    <p className="text-gray-500 mt-2">
+                        Registration Number: {doctor.registrationNumber}
+                    </p>
+
+                    <p className="mt-4 text-lg font-semibold text-blue-600">
+                        Consultation Fee: {doctor.fee} Taka
+                    </p>
+                </div>
+            </div>
+
+            <div className="mt-8 bg-white border border-gray-200 rounded-2xl p-6">
+                <h3 className="text-xl font-bold text-gray-800">
+                    Book an Appointment
+                </h3>
+
+                <div className="mt-4 flex items-center justify-between border rounded-xl px-4 py-3">
+                    <span className="font-medium text-gray-700">
+                        Availability
+                    </span>
+
+                    <span className="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">
+                        Doctor Available Today
+                    </span>
+                </div>
+
+                <button
+                    onClick={handleBookNow}
+                    className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-full"
+                >
+                    Book Now
+                </button>
+            </div>
         </div>
+
     );
 };
 

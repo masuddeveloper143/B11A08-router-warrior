@@ -9,6 +9,13 @@ import ErrorPage from './lauouts/pages/ErrorPage.jsx';
 import Home from './lauouts/pages/Home.jsx';
 import DoctorDetails from './lauouts/pages/DoctorDetails.jsx';
 import Bookings from './lauouts/pages/Bookings.jsx';
+import Blogs from './lauouts/pages/Blogs.jsx';
+
+
+
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 const router = createBrowserRouter([
@@ -29,8 +36,13 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "bookings",
+        path: "/bookings",
         Component: Bookings,
+      },
+
+      {
+        path: "/blogs",
+        Component: Blogs,
       }
 
     ]
@@ -40,5 +52,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />,
+    <ToastContainer />
   </StrictMode>,
 )

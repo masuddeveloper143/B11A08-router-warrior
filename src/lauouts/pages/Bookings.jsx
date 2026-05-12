@@ -5,6 +5,16 @@ import {
     removeAppointment,
 } from "../../utilities/localStorage";
 
+import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    Tooltip,
+    CartesianGrid,
+    ResponsiveContainer,
+} from "recharts";
+
 const Bookings = () => {
     const [bookedDoctors, setBookedDoctors] = useState([]);
 
@@ -44,9 +54,38 @@ const Bookings = () => {
         );
     }
 
+
+
+    const chartData = bookedDoctors.map((doctor) => ({
+        name: doctor.name,
+        fee: doctor.fee,
+    }));
+
+
+
     return (
+
+
         <div>
             <h1>My Today Appointments</h1>
+
+
+            {bookedDoctors.length > 0 && (
+                <div className="w-full h-80 mb-8">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={chartData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                            <Line type="monotone" dataKey="fee" stroke="#2563eb" />
+                        </LineChart>
+                    </ResponsiveContainer>
+                </div>
+            )}
+
+
+
 
             {bookedDoctors.map((doctor) => (
                 <div
@@ -63,7 +102,8 @@ const Bookings = () => {
                     <p>{doctor.speciality}</p>
                     <p>Fee: {doctor.fee}</p>
 
-                    <button onClick={() => handleCancel(doctor.id)}>
+
+                    <button className="btn w-full border border-red-600 rounded-4xl" onClick={() => handleCancel(doctor.id)}>
                         Cancel Appointment
                     </button>
                 </div>

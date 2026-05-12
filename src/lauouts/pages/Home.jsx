@@ -19,11 +19,7 @@ const Home = () => {
       <h1>Our Best Doctors</h1>
 
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "20px",
-        }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {displayedDoctors.map((doctor) => (
 
@@ -32,23 +28,44 @@ const Home = () => {
 
 
             <div
-              style={{
-                border: "1px solid gray",
-                padding: "10px",
-                borderRadius: "10px",
-              }}
+              key={doctor.id}
+              className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm"
             >
-              <img
-                src={doctor.image}
-                alt={doctor.name}
-                style={{ width: "100%" }}
-              />
-              <h3>{doctor.name}</h3>
-              <p>{doctor.education}</p>
-              <p>{doctor.speciality}</p>
-              <p>{doctor.experience}</p>
-              <p>{doctor.registrationNumber}</p>
-              <button className="btn text-blue-600 border border-blue-600 rounded-4xl px-6 font-bold w-full">View Details</button>
+              <div className="rounded-2xl bg-[#EAF7F7] p-3">
+                <img
+                  src={doctor.image}
+                  alt={doctor.name}
+                  className="h-56 w-full rounded-xl object-cover"
+                />
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                <span className="rounded-full bg-green-50 px-3 py-1 text-green-600">
+                  Available
+                </span>
+
+                <span className="rounded-full bg-blue-50 px-3 py-1 text-blue-600">
+                  {doctor.experience}
+                </span>
+              </div>
+
+              <h2 className="mt-4 text-xl font-bold text-gray-800">
+                {doctor.name}
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-500">
+                {doctor.education}
+              </p>
+
+              <p className="mt-3 border-t border-dashed pt-3 text-sm text-gray-500">
+                Reg No: {doctor.registrationNumber}
+              </p>
+
+              <Link to={`/doctors/${doctor.id}`}>
+                <button className="mt-4 w-full rounded-full border border-blue-400 py-3 text-sm font-medium text-blue-500 transition hover:bg-blue-500 hover:text-white">
+                  View Details
+                </button>
+              </Link>
             </div>
           </Link>
         ))}
@@ -61,7 +78,53 @@ const Home = () => {
           </button>
         </div>
       )}
+
+
+
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div className="bg-gray-100 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold">
+            <CountUp end={199} duration={5} />+
+          </h2>
+          <p className="text-gray-500 mt-2">
+            Total Doctors
+          </p>
+        </div>
+
+        <div className="bg-gray-100 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold">
+            <CountUp end={467} duration={5} />+
+          </h2>
+          <p className="text-gray-500 mt-2">
+            Total Reviews
+          </p>
+        </div>
+
+        <div className="bg-gray-100 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold">
+            <CountUp end={1900} duration={5} />+
+          </h2>
+          <p className="text-gray-500 mt-2">
+            Patients
+          </p>
+        </div>
+
+        <div className="bg-gray-100 rounded-2xl p-6 text-center">
+          <h2 className="text-3xl font-bold">
+            <CountUp end={300} duration={5} />+
+          </h2>
+          <p className="text-gray-500 mt-2">
+            Total Staff
+          </p>
+        </div>
+      </div>
+
+
     </div>
+
+
+
 
 
   );
