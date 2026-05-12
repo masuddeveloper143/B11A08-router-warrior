@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import CountUp from "react-countup";
 
 const Home = () => {
   const [doctors, setDoctors] = useState([]);
@@ -19,7 +20,7 @@ const Home = () => {
       <h1>Our Best Doctors</h1>
 
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {displayedDoctors.map((doctor) => (
 
@@ -77,50 +78,15 @@ const Home = () => {
             Show All
           </button>
         </div>
-      )}
+      )};
 
 
 
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-        <div className="bg-gray-100 rounded-2xl p-6 text-center">
-          <h2 className="text-3xl font-bold">
-            <CountUp end={199} duration={5} />+
-          </h2>
-          <p className="text-gray-500 mt-2">
-            Total Doctors
-          </p>
-        </div>
-
-        <div className="bg-gray-100 rounded-2xl p-6 text-center">
-          <h2 className="text-3xl font-bold">
-            <CountUp end={467} duration={5} />+
-          </h2>
-          <p className="text-gray-500 mt-2">
-            Total Reviews
-          </p>
-        </div>
-
-        <div className="bg-gray-100 rounded-2xl p-6 text-center">
-          <h2 className="text-3xl font-bold">
-            <CountUp end={1900} duration={5} />+
-          </h2>
-          <p className="text-gray-500 mt-2">
-            Patients
-          </p>
-        </div>
-
-        <div className="bg-gray-100 rounded-2xl p-6 text-center">
-          <h2 className="text-3xl font-bold">
-            <CountUp end={300} duration={5} />+
-          </h2>
-          <p className="text-gray-500 mt-2">
-            Total Staff
-          </p>
-        </div>
-      </div>
 
 
+
+      
     </div>
 
 
