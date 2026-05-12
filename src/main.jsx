@@ -8,6 +8,7 @@ import Root from './lauouts/Root.jsx';
 import ErrorPage from './lauouts/pages/ErrorPage.jsx';
 import Home from './lauouts/pages/Home.jsx';
 import DoctorDetails from './lauouts/pages/DoctorDetails.jsx';
+import Bookings from './lauouts/pages/Bookings.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,7 +26,13 @@ const router = createBrowserRouter([
       {
         path: "/doctors/:id",
         Component: DoctorDetails,
+      },
+
+      {
+        path: "bookings",
+        Component: Bookings,
       }
+
     ]
   },
 ]);

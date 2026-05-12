@@ -27,3 +27,20 @@ export const saveAppointment = (id) => {
 
   return true;
 };
+
+
+// remove function 
+
+export const removeAppointment = (id) => {
+  const storedAppointments = getStoredAppointments();
+
+  const remaining = storedAppointments.filter(
+    (appointmentId) => appointmentId !== id
+  );
+
+  localStorage.setItem(
+    "appointments",
+    JSON.stringify(remaining)
+  );
+};
+

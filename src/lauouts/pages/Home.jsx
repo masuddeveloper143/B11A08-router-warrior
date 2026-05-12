@@ -14,24 +14,24 @@ const Home = () => {
   const displayedDoctors = showAll ? doctors : doctors.slice(0, 6);
 
   return (
-    
-      <div>
-        <h1>Our Best Doctors</h1>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "20px",
-          }}
-        >
-          {displayedDoctors.map((doctor) => (
-            
-            <Link key={doctor.id} to={`/doctors/${doctor.id}`}>
-            
-            
-              
-              <div
+    <div>
+      <h1>Our Best Doctors</h1>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "20px",
+        }}
+      >
+        {displayedDoctors.map((doctor) => (
+
+          <Link key={doctor.id} to={`/doctors/${doctor.id}`}>
+
+
+
+            <div
               style={{
                 border: "1px solid gray",
                 padding: "10px",
@@ -48,21 +48,22 @@ const Home = () => {
               <p>{doctor.speciality}</p>
               <p>{doctor.experience}</p>
               <p>{doctor.registrationNumber}</p>
+              <button className="btn text-blue-600 border border-blue-600 rounded-4xl px-6 font-bold w-full">View Details</button>
             </div>
-            </Link>
-          ))}
-        </div>
-
-        {!showAll && (
-          <div className="flex justify-center mt-5">
-            <button className="btn bg-blue-600 text-white" onClick={() => setShowAll(true)}>
-              Show All
-            </button>
-          </div>
-        )}
+          </Link>
+        ))}
       </div>
 
-    
+      {!showAll && (
+        <div className="flex justify-center mt-5">
+          <button className="btn bg-blue-600 text-white" onClick={() => setShowAll(true)}>
+            Show All
+          </button>
+        </div>
+      )}
+    </div>
+
+
   );
 };
 
